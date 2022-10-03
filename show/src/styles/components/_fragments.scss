@@ -1,0 +1,69 @@
+//parent des fragments
+.fragmentBigLimit {
+  height: 100%; //replis le parent (blockHome)
+  width: 100%;
+  overflow: hidden; //pas de dépassement des block decendants
+  position: relative; //obligatoire pour donné un cadre aux blocks decendants qui sont en positionnement absolue
+
+  &:hover {
+    //passage de la souris
+    .rectTop {
+      //on dégage les blocks decendant pour révélé le gradient de couleur en background
+      background-color: black; //petite touche de couleur lors de la transition
+      transform: translate(-50%, -100%); //vers le haut
+    }
+    .rectBottom {
+      background-color: black;
+      transform: translate(-50%, 200%); //vers le bas
+    }
+    h1 {
+      letter-spacing: 40px; //on rajoute 10px d'éspacement lors du hover
+    }
+    cursor: pointer; //curseur en forme pointer lors du hover
+  }
+
+  h1 {
+    //text dans les blocks
+    font-size: 150px; //seulement quand media screen width > 1000px
+    letter-spacing: 30px; //espacement des lettres
+
+    -webkit-text-stroke: 2px $color-2; //bordure du text = même couleur que la bordure des blocks
+    color: transparent;
+
+    position: absolute;
+
+    user-select: none; //text non selectionable
+    -webkit-user-select: none; //text non selectionable safari
+    z-index: 1; //par dessus les block battants
+
+    //centrer --
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-44%, 50%); //44% en x semble bien avec cette police
+    //centrer fin--
+
+    transition: 1s; //pour l'espacement lors du hover du parent
+  }
+
+  //si media screen < 1000px
+  @media screen and (max-width: 1000px) {
+    h1 {
+      font-size: 15vmin; //font size évolue avec la width de la page
+    }
+  }
+}
+
+.fragmentRotated {
+  height: 50%; //deux fragements, chacun 50% de la hauteur du parent
+  width: 100%;
+  background-color: $color-1; //même couleur que le baground du body
+  left: 50%; //centre avec translateX(-50%)
+  position: absolute;
+  transition: 1s ease-in;
+  &.rectTop {
+    transform: translate(-50%, -1%);
+  }
+  &.rectBottom {
+    transform: translate(-50%, 101%);
+  }
+}

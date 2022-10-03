@@ -1,0 +1,48 @@
+//contenant des fragments
+.blockHome {
+  background-color: black;
+  width: 90%;
+  height: 350px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  border: solid 4px;
+  border-color: $color-2;
+  position: relative;
+
+  max-width: 1000px;
+  min-width: 350px;
+
+  &.first {
+    background: linear-gradient(
+      194deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 121, 39, 0.8155637254901961) 55%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  }
+
+  &.second {
+    background: linear-gradient(
+      189deg,
+      rgba(180, 58, 85, 1) 0%,
+      rgba(98, 0, 36, 0.9472163865546218) 26%,
+      rgba(85, 170, 157, 1) 100%
+    );
+  }
+
+  &.third {
+    background: linear-gradient(
+      31deg,
+      rgba(180, 58, 58, 1) 0%,
+      rgba(98, 94, 0, 0.8239670868347339) 26%,
+      rgba(105, 104, 76, 1) 49%,
+      rgba(86, 117, 166, 1) 76%,
+      rgba(85, 170, 157, 1) 100%
+    );
+  }
+}

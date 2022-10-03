@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/University.otf);
+}
+
+$font-1: "font-1", sans-serif;
+
+$color-1: #1b1b1b;
+$color-2: rgb(221, 220, 220);
+$white: rgb(243, 243, 243);
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-1;
+  font-family: $font-1;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  justify-content: center;
+}
+
+button {
+  display: block;
+}
