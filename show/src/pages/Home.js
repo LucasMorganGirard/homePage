@@ -1,12 +1,12 @@
 import React from "react";
-import BlockHome from "../components/BlockHome";
+import Fragment from "../components/Fragment";
 
 const Home = () => {
   return (
     <div className="home">
-      <BlockHome className="first" text="HOME" />
-      <BlockHome className="second" text="TEST" />
-      <BlockHome className="third" text="TZA" />
+      <Fragment className="first" text="HOME" />
+      <Fragment className="second" text="TEST" />
+      <Fragment className="third" text="TZA" />
     </div>
   );
 };
