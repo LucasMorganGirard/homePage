@@ -63,7 +63,6 @@
     h1 {
       letter-spacing: 50px; //on rajoute 10px d'éspacement lors du hover
       color: rgba(255, 255, 255, 0.6);
-      text-shadow: none;
     }
 
     cursor: pointer; //curseur en forme pointer lors du hover
@@ -73,10 +72,9 @@
     //text dans les blocks
     font-size: 150px; //seulement quand media screen width > 1000px
     letter-spacing: 30px; //espacement des lettres
+    text-shadow: 0px 13px 15px #2e2d2d;
 
-    text-shadow: -4px -4px 0 $color-3, -4px 4px 0 $color-3, 4px -4px 0 $color-3,
-      4px 4px 0 $color-3;
-    color: rgba(255, 255, 255, 1);
+    color: rgb(224, 223, 223);
 
     position: absolute;
 
@@ -90,7 +88,7 @@
     transform: translate(-44%, 55%); //44% en x semble bien avec cette police
     //centrer fin--
 
-    transition: 1s; //pour l'espacement lors du hover du parent
+    transition: 1s cubic-bezier(1, -0.14, 0.74, 1.03); //pour l'espacement lors du hover du parent
   }
 
   //si media screen < 1000px
@@ -98,6 +96,11 @@
     h1 {
       font-size: 15vmin; //font size évolue avec la width de la page
     }
+  }
+
+  @media screen and (max-width: 500px) {
+    margin: 0;
+    width: 100%;
   }
 }
 
@@ -108,11 +111,11 @@
   left: 50%; //centre avec translateX(-50%)
   position: absolute;
   top: 0;
-  transition: 1s ease-in;
+  transition: 1s cubic-bezier(1, -0.14, 0.74, 1.03);
   &.rectTop {
     transform: translate(-50%, -3%);
   }
   &.rectBottom {
-    transform: translate(-50%, 101%);
+    transform: translate(-50%, 105%);
   }
 }
